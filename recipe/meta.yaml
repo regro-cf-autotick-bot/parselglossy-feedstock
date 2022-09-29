@@ -1,5 +1,5 @@
 {% set name = "parselglossy" %}
-{% set version = "0.8.0" %}
+{% set version = "0.8.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
-  sha256: 9bdb112f73fc434e9ab43904efac45426c39bd07df3dde51db8f2bca6490c6e9
+  sha256: 182b92de176d9c0d1a895e8a73834cd87aa6e7ebe053e1c2c57c02a46eaad2fe
 
 build:
   number: 0
