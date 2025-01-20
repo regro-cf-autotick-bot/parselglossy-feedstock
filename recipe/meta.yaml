@@ -6,11 +6,11 @@ package:
   version: {{ version }}
 
 source:
-  url: https://pypi.io/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
+  url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/{{ name }}-{{ version }}.tar.gz
   sha256: 182b92de176d9c0d1a895e8a73834cd87aa6e7ebe053e1c2c57c02a46eaad2fe
 
 build:
-  number: 0
+  number: 1
   noarch: python
   entry_points:
     - parselglossy = parselglossy.cli:cli
@@ -23,16 +23,18 @@ requirements:
     - networkx
     - pip
     - pyparsing
-    - python >=3.6
+    - python {{ python_min }}
     - pyyaml
   run:
     - click
     - networkx
     - pyparsing
-    - python >=3.6
+    - python >={{ python_min }}
     - pyyaml
 
 test:
+  requires:
+    - python {{ python_min }}
   imports:
     - parselglossy
     - parselglossy.grammars
